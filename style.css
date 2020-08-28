@@ -2,7 +2,9 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito', 'Raleway', sans-serif;
+  /*font-family: 'Nunito', 'Raleway', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -18,7 +20,13 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
-  font-size: 14px;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.navbar div {
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar img {
@@ -103,7 +111,7 @@ body {
 }
 
 .btn:hover {
-  opacity: 0.9;
+  opacity: 0.8;
   transition: .2s;
   cursor: pointer;
   text-decoration: underline;
@@ -143,4 +151,308 @@ body {
 
 .productos div a:hover {
   text-decoration: underline;
+}
+
+
+/* cards: productos, servicios */
+.noticias {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 10px 0;
+}
+
+.card {
+  text-decoration: none;
+}
+
+.card img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.card:hover img{
+  opacity: 0.9;
+}
+
+.card h3,
+.card p {
+  color: #000;
+  margin: 0;
+}
+
+.card p {
+  margin-bottom: 15px;
+}
+
+.link {
+  width: 100%;
+  text-decoration: none;
+  color: #4D71E1;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:hover i {
+  padding-inline-start: 6px;
+  transition: .2s;
+}
+
+/* xbox one s */
+
+.xbox-one {
+  width: 100%;
+  height: 500px;
+  background: url('img/halo.png');
+  background-image: no-repeat;
+  background-image: fixed;
+  background-image: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.xbox-one h2 {
+  margin-bottom: 3px;
+}
+
+.xbox-one h2,
+.xbox-one p,
+.xbox-one button {
+  margin-left: 75px;
+  margin-top: 3px;
+}
+.xbox-one button {
+  width: 200px;
+}
+
+/* redes sociales */
+.redes {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: grey;
+}
+
+
+.redes i {
+  font-size: 35px;
+  margin-left: 15px;
+}
+
+.twitter {
+  color: #00ACEE;
+}
+
+.twitter:hover {
+  opacity: 0.8;
+}
+
+.linkedin {
+  color: #0E76A8;
+}
+
+.linkedin:hover {
+  opacity: 0.8;
+}
+
+/* footer menu */
+.footer-menu {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.footer-container {
+  width: 90%;
+  padding: 30px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.footer-container div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container h4 {
+  margin-bottom: 0;
+}
+
+.footer-container div a {
+  display: inline-block;
+  font-size: 12px;
+  color: #000;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.content a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 15px;
+}
+
+.avisos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.idioma {
+  display: flex;
+  align-items: center;
+}
+
+/* boton para desplegar barra de nav */
+.menu-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 15px;
+  left: 30px;
+  z-index: 2;
+  display: none;
+} 
+
+/* mediaquerys */
+
+@media (max-width: 1000px) {
+
+  .noticias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .productos {
+    justify-content: space-around;
+  }
+
+  .productos div {
+    width: 20%;
+  }
+
+}
+
+@media (max-width: 850px) {
+  .menu-btn {
+    margin: 0 15px;
+    display: block;
+  }
+
+  .navbar a {
+    margin-left: 50px;
+  }
+
+  .navbar ul.nav-menu {
+    display: block;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: #f2f2f2;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    transform: translateY(-120%);
+    transition: transform .5s ease-in-out;
+  }
+
+  .navbar .nav-menu.show {
+    transform: translateY(0);
+  }
+
+  ul.nav-menu .nav-menu-item {
+    margin: 30px 0;
+  }
+
+  ul.nav-menu .nav-menu-item:hover {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .container {
+    width: 95%;
+  }
+
+  .menu-btn {
+    margin: 0 0;
+  }
+
+  .all-microsoft {
+    display: none !important;
+  }
+
+  .noticias {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .productos div {
+    width: 100%;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .avisos {
+    margin-top: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .xbox-one {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .xbox-one h2,
+  .xbox-one p,
+  .xbox-one button {
+    margin-left: 0;
+  }
 }
